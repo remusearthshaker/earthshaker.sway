@@ -1,73 +1,84 @@
-🌲 Earthshaker Sway Theme
+# 🌲 Earthshaker Sway Theme
 
-Earthshaker is a full SwayWM theme designed to bring the living forest to your Linux desktop.
+**Earthshaker** is a full SwayWM theme designed to bring the living forest to your Linux desktop.
 
 Built from the Earthshaker aesthetic — warm earth tones, lively greens, wildflower highlights, and deep forest shadows — this theme is meant to feel grounded, alive, and familiar without being overly bright or distracting.
 
-Originally crafted for the personal setup of Remus Alexander as part of a larger narrative, Earthshaker is now available for anyone who seeks to build a calm, breathing environment in their workspace.
-📦 Features
+Originally crafted for the personal system of *Remus Alexander* as part of a larger narrative, Earthshaker is now available for anyone seeking to build a calm, breathing environment in their workspace.
 
-    Full color palette inspired by living forests 🌳
+---
 
-    Customized client (window) styling
+## 📦 Features
 
-    Fully themed Swaybar: focused, active, inactive, urgent workspaces
+- Full color palette inspired by living forests 🌳
+- Customized window (`client.*`) styling
+- Fully themed Swaybar: focused, active, inactive, urgent workspaces
+- Seamless palette integration with Neovim Earthshaker and terminal environments
+- Soft, living contrast — bright where needed, muted elsewhere
 
-    Soft visual flow — bright where necessary, muted where restful
+---
 
-    Seamless integration with Neovim Earthshaker and terminal themes
+## 🎨 Palette Overview
 
-🎨 Palette
-Name	Color	Description
-Forest Floor	#1a1c1b	Main background base
-Sunlight	#e0d6c3	Text and soft highlights
-Wildflower	#ffc07c	Focus indicators
-Berrythorn	#ff6655	Urgent signals
-Sage	#6c8f6c	Focused workspace highlight
-Barkdark	#2c302c	Secondary background
-Lightsage	#c9d8b6	Inactive text
+| Name         | Color    | Description                  |
+|--------------|----------|-------------------------------|
+| Forest Floor | `#1a1c1b` | Main background base          |
+| Sunlight     | `#e0d6c3` | Text and soft highlights      |
+| Wildflower   | `#ffc07c` | Focus indicators              |
+| Berrythorn   | `#ff6655` | Urgent signals                |
+| Sage         | `#6c8f6c` | Focused workspace highlight   |
+| Barkdark     | `#2c302c` | Secondary background surfaces |
+| Lightsage    | `#c9d8b6` | Inactive text                 |
 
-(Full variable mapping available inside the theme files.)
-🚀 Installation
+*(Full variable mappings available inside the theme files.)*
 
-Clone the repo:
+---
 
-git clone https://github.com/remusalexander/earthshaker-sway.git ~/.config/sway/themes/earthshaker
+## 🚀 Installation
 
-Then inside your Sway config, source it:
+Clone the repository:
 
-include ~/.config/sway/themes/earthshaker/earthshaker.conf
+```bash
+git clone https://github.com/remusalexander/earthshaker.sway.git ~/.config/sway/themes/earthshaker
+```
 
-Or manually include sections like:
+Then in your Sway config:
 
-include ~/.config/sway/themes/earthshaker/colors-client.conf
-include ~/.config/sway/themes/earthshaker/colors-bar.conf
+```bash
+include ~/.config/sway/themes/earthshaker/earthshaker
+```
 
-(If you prefer modular style.)
-🛠️ Components
+---
 
-    earthshaker.conf — full theme configuration
+## Reference in config
 
-    colors-client.conf — window styling
+You can setup your config to look like this
 
-    colors-bar.conf — swaybar styling
+```
+# target                   title         bg             text         indicator    border
+client.focused            $sunlight      $forestfloor   $wildflower  $berrythorn  $sunlight
+client.focused_inactive   $overlay_barkshadow $forestfloor $lightsage $berrythorn $overlay_barkshadow
+client.unfocused          $overlay_barkshadow $forestfloor $lightsage $berrythorn $overlay_barkshadow
+client.urgent             $pollen        $forestfloor   $pollen      $overlay_barkshadow $pollen
+client.placeholder        $overlay_barkshadow $forestfloor $lightsage $overlay_barkshadow $overlay_barkshadow
+client.background         $forestfloor
 
-    variables.conf — full Earthshaker palette
+```
 
-🧠 Philosophy
+and for your Swaybar
 
-Earthshaker is not just a theme —
-it's a reminder that your desktop can breathe with you.
+```
+        colors {
+            background          $forestfloor
+            statusline          $sunlight
+            focused_statusline  $sunlight
+            focused_separator   $forestfloor
 
-It’s meant to anchor you while you work.
-To provide warmth without shouting.
-To create a sense of calm resilience even in chaotic digital spaces.
+            #target             border          bg                text
+            focused_workspace   $forestfloor    $sage             $blacksoil
+            active_workspace    $forestfloor    $barkdark         $sunlight
+            inactive_workspace  $forestfloor    $forestfloor      $lightsage
+            urgent_workspace    $forestfloor    $berrythorn       $blacksoil
+        }
 
-This project grew out of the need for a quiet, living world inside an increasingly noisy one.
-🌳 License
-
-MIT License.
-Feel free to use, modify, remix.
-
-If you enhance Earthshaker or adapt it for another compositor — I'd love to hear about it.
-🌲🌀🌸
+```
