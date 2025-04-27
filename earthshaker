@@ -1,0 +1,24 @@
+set $wildflower #ffc07c
+set $berrythorn #ff6655
+set $bloom #f7c59f
+set $sage #6c8f6c
+set $red #ff6655
+set $bark #d68e5d
+set $pollen #eabf6a
+set $leaf #90b48f
+set $newbud #acc196
+set $fernmist #a3b18a
+set $moss #7c8474
+set $deepsage #809775
+set $sunlight #e0d6c3
+set $lightsage #c9d8b6
+set $mutedolive #b5bfa1
+set $overlay_moss #7c8474
+set $overlay_deepmoss #585b5c
+set $overlay_barkshadow #3a3938
+set $barkdark #2c302c
+set $canopyshadow #232220
+set $forestfloor #1a1c1b
+set $deepforestfloor #181816
+set $blacksoil #121210
+
